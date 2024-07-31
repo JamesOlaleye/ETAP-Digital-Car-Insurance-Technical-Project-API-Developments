@@ -91,7 +91,7 @@ This README provides a basic outline of the entities and attributes used in the 
 
 ## 🛠️ Installation
 
-````bash
+```bash
 $ yarn install
 
 # development
@@ -102,11 +102,12 @@ $ yarn run start:dev
 
 # production mode
 $ yarn run start:prod
-```markdown
+```
 
 ## 🧪 Test
 
 ```bash
+
 # unit tests
 $ yarn run test
 
@@ -115,11 +116,16 @@ $ yarn run test:e2e
 
 # test coverage
 $ yarn run test:cov
-```markdown
+```
 
 ## 📜 License
+
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## 📞 Contact
+
 For questions or feedback, please contact James Olanipekun @jamesfullstackdeveloper@gmail.com.
-````
+
+```
+
+```
