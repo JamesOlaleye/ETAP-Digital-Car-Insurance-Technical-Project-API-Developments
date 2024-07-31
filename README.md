@@ -5,7 +5,6 @@
 </p>
 
 ## 📚 Table of Contents
-
 1. [Entities](#entities)
    - [Users](#users)
    - [Subjects](#subjects)
@@ -26,7 +25,6 @@
 ## 📂 Entities
 
 ### Users
-
 - **Name**
 - **Email**
 - **Password**
@@ -35,21 +33,18 @@
 - **Progress** (progress in different subjects/topics)
 
 ### Subjects
-
 - **Title**
 - **Topics** (list of topics covered in the subject)
 - **Teacher** (teacher responsible for the subject)
 - **Students** (students enrolled in the subject)
 
 ### Topics
-
 - **Title**
 - **Description**
 - **Video** (video resources for the topic)
 - **Progress** (progress of users in the topic)
 
 ### Progress
-
 - **Student**
 - **Topic**
 - **Status** (status of the student's progress in the topic)
@@ -57,7 +52,6 @@
 ## 📝 Attributes
 
 ### User Attributes
-
 - **Name**: The full name of the user.
 - **Email**: The email address of the user.
 - **Password**: A secure password for user authentication.
@@ -66,21 +60,18 @@
 - **Progress**: The progress made by the user in various subjects and topics.
 
 ### Subject Attributes
-
 - **Title**: The name of the subject.
 - **Topics**: A list of topics that are covered within the subject.
 - **Teacher**: The teacher assigned to the subject.
 - **Students**: The students who are enrolled in the subject.
 
 ### Topic Attributes
-
 - **Title**: The name of the topic.
 - **Description**: A brief description of what the topic covers.
 - **Video**: Any video resources available for the topic.
 - **Progress**: The progress made by users in the topic.
 
 ### Progress Attributes
-
 - **Student**: The student associated with the progress record.
 - **Topic**: The topic associated with the progress record.
 - **Status**: The current status of the student's progress in the topic.
@@ -91,11 +82,8 @@ This README provides a basic outline of the entities and attributes used in the 
 
 ## 🛠️ Installation
 
-````bash
-$ yarn install
-
-## 🚀 Running the App
 ```bash
+$ yarn install
 
 # development
 $ yarn run start
@@ -106,10 +94,6 @@ $ yarn run start:dev
 # production mode
 $ yarn run start:prod
 
-```bash
-## 🧪 Test
-
-```bash
 # unit tests
 $ yarn run test
 
@@ -118,4 +102,3 @@ $ yarn run test:e2e
 
 # test coverage
 $ yarn run test:cov
-````
