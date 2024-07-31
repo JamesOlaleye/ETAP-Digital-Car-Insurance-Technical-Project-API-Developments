@@ -11,6 +11,7 @@ import { v2 as cloudinary } from 'cloudinary';
 import { UserModule } from './user/user.module';
 import { SubjectModule } from './subject/subject.module';
 import { TopicModule } from './topic/topic.module';
+import { ProgressModule } from './progress/progress.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { TopicModule } from './topic/topic.module';
     UserModule,
     SubjectModule,
     TopicModule,
+    ProgressModule,
   ],
   controllers: [AppController],
   providers: [AppService],

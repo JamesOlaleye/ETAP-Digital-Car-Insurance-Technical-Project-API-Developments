@@ -53,9 +53,13 @@ export class UserRepository {
 
     return await this.prisma.user.count({ where });
   }
+
   async findTeachers() {}
+
   async findStudents() {}
+
   async findAdmin() {}
+
   async makeTeacher(id: string) {
     const args = new FindUserDto();
     args.id = id;
@@ -75,5 +79,6 @@ export class UserRepository {
       },
     });
   }
+
   async update() {}
 }
