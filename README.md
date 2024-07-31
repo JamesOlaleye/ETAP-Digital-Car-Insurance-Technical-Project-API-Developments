@@ -1,27 +1,29 @@
-# 🏫 SCHOOL ARCHITECTURE
-
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
 
+# 🏫 SCHOOL ARCHITECTURE
+
+### Users, Subjects, Topics, Videos, Progress
+
 ## 📚 Table of Contents
 
-1. [Entities](#entities)
-   - [Users](#users)
-   - [Subjects](#subjects)
-   - [Topics](#topics)
-   - [Progress](#progress)
-2. [Attributes](#attributes)
-   - [User Attributes](#user-attributes)
-   - [Subject Attributes](#subject-attributes)
-   - [Topic Attributes](#topic-attributes)
-   - [Progress Attributes](#progress-attributes)
-3. [Usage](#usage)
-4. [Installation](#installation)
-5. [Running the App](#running-the-app)
-6. [Test](#test)
-7. [License](#license)
-8. [Contact](#contact)
+- Entities
+  - Users
+  - Subjects
+  - Topics
+  - Progress
+- Attributes
+  - User Attributes
+  - Subject Attributes
+  - Topic Attributes
+  - Progress Attributes
+- Usage
+- Installation
+- Running the App
+- Test
+- License
+- Contact
 
 ## 📂 Entities
 
