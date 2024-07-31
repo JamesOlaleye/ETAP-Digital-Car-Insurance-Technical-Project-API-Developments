@@ -96,6 +96,7 @@ $ yarn install
 
 ## 🚀 Running the App
 ```bash
+
 # development
 $ yarn run start
 
@@ -105,7 +106,7 @@ $ yarn run start:dev
 # production mode
 $ yarn run start:prod
 
-```markdown
+```bash
 ## 🧪 Test
 
 ```bash
