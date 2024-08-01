@@ -6,7 +6,6 @@
 
 ### Users, Subjects, Topics, Videos, Progress
 
-
 ## 📚 Table of Contents
 
 - Entities
@@ -110,7 +109,6 @@ $ yarn run start:prod
 ## 🧪 Test
 
 ```bash
-
 # unit tests
 $ yarn run test
 
@@ -132,3 +130,8 @@ For questions or feedback, please contact James Olanipekun @jamesfullstackdevelo
 ```
 
 ```
+
+## API Documentation
+
+For comprehensive details on the API, please refer to the [API Documentation](./README-APIs.md). This document provides essential information on available endpoints, request/response formats, and usage examples to help you integrate with the API effectively.
+
