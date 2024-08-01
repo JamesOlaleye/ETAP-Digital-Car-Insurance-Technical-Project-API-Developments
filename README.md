@@ -133,4 +133,4 @@ For questions or feedback, please contact James Olanipekun @jamesfullstackdevelo
 
 ## 📄 API Documentation
 
-For comprehensive details on the API, please refer to the [API Documentation](./README-APIs.md). This document provides essential information on available endpoints, request/response formats, and usage examples to help you integrate with the API effectively.
+For comprehensive details on the API, please refer to the [API Documentation](./README_APIs.md). This document provides essential information on available endpoints, request/response formats, and usage examples to help you integrate with the API effectively.
