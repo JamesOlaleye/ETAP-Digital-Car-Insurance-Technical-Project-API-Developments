@@ -28,6 +28,10 @@ export class SubjectService {
     return await this.subjectRepo.findMany(dto);
   }
 
+  async listMySubjects(user: ReqUser) {
+    return await this.subjectRepo.listMySubjects(user);
+  }
+
   async enroll(user: ReqUser, dto: IdDto) {
     return await this.subjectRepo.enroll(user, dto);
   }

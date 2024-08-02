@@ -102,12 +102,13 @@ export class TopicController {
   @UseGuards(JwtGuard, new RoleGuard(Role.TEACHER, false))
   async update(@Body() dto: UpdateTopicDto, @Req() req: any) {
     const user = req.user as ReqUser;
-    await this.topicService.confirmTeacher(user, dto.id);
-    const topic = await this.topicService.update(dto);
+    const topic = await this.topicService.findOne(dto);
+    await this.topicService.confirmTeacher(user, topic.subjectId);
+    const result = await this.topicService.update(dto);
 
     return {
       message: 'Topic updated',
-      data: topic,
+      data: result,
     };
   }
 }

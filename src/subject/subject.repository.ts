@@ -157,6 +157,31 @@ export class SubjectRepository {
       .students();
   }
 
+  async listMySubjects(user: ReqUser) {
+    let subjects = [];
+    if (user.role === Role.TEACHER) {
+      subjects = await this.prisma.subject.findMany({
+        where: { teacherId: user.id },
+        include: {
+          teacher: true,
+          students: {
+            select: { id: true },
+          },
+        },
+      });
+    }
+
+    if (user.role === Role.STUDENT) {
+      subjects = await this.prisma.subject.findMany({
+        where: { students: { some: { id: user.id } } },
+        include: {
+          teacher: true,
+          topics: true,
+        },
+      });
+    }
+  }
+
   async listTopics(id: string) {
     await this.findOne(id);
 

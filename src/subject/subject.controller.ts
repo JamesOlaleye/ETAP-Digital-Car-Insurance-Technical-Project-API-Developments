@@ -77,6 +77,18 @@ export class SubjectController {
     };
   }
 
+  @Get('mine')
+  @UseGuards(JwtGuard)
+  async listMySubjects(@Req() req: any) {
+    const user = req.user as ReqUser;
+    const subjects = await this.subjectService.listMySubjects(user);
+
+    return {
+      message: 'Your subjects',
+      data: subjects,
+    };
+  }
+
   @Post('enroll')
   @UseGuards(JwtGuard, new RoleGuard(Role.STUDENT, false))
   async enroll(@Body() dto: IdDto, @Req() req: any) {
