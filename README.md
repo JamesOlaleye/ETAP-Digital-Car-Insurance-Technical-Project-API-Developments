@@ -1,136 +1,256 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# 📚 ETAP School-API
 
-# 🏫 SCHOOL ARCHITECTURE
+### Documentation
 
-### Users, Subjects, Topics, Videos, Progress
+---
 
-## 📚 Table of Contents
+#### Operation: Admin registration
 
-- Entities
-  - Users
-  - Subjects
-  - Topics
-  - Progress
-- Attributes
-  - User Attributes
-  - Subject Attributes
-  - Topic Attributes
-  - Progress Attributes
-- Usage
-- Installation
-- Running the App
-- Test
-- License
-- Contact
+- **Description:** The correct adminKey must be provided for admin registration.
+- **URL:** `/auth/register`
+- **Method:** POST
+- **Example:**
+  ```json
+  {
+    "firstName": "nameExample",
+    "lastName": "nameExample",
+    "email": "example@mail.com",
+    "adminKey": "administrator"
+  }
+  ```
 
-## 📂 Entities
+---
 
-### Users
+#### Operation: Register a User
 
-- **Name**
-- **Email**
-- **Password**
-- **Role** (e.g., teacher, student)
-- **Subjects** (subjects the user is associated with)
-- **Progress** (progress in different subjects/topics)
+- **Description:** Register a new user.
+- **URL:** `/auth/register`
+- **Method:** POST
+- **Example:**
+  ```json
+  {
+    "firstName": "nameExample",
+    "lastName": "nameExample",
+    "email": "example@mail.com",
+    "password": "123456"
+  }
+  ```
 
-### Subjects
+---
 
-- **Title**
-- **Topics** (list of topics covered in the subject)
-- **Teacher** (teacher responsible for the subject)
-- **Students** (students enrolled in the subject)
+#### Operation: Login a User
 
-### Topics
+- **Description:** Login an existing user.
+- **URL:** `/auth/login`
+- **Method:** POST
+- **Example:**
+  ```json
+  {
+    "email": "james@mail.com",
+    "password": "123456"
+  }
+  ```
 
-- **Title**
-- **Description**
-- **Video** (video resources for the topic)
-- **Progress** (progress of users in the topic)
+---
 
-### Progress
+#### Operation: Get a User
 
-- **Student**
-- **Topic**
-- **Status** (status of the student's progress in the topic)
+- **Description:** Retrieve a user by ID.
+- **URL:** `/user/:id`
+- **Method:** GET
 
-## 📝 Attributes
+---
 
-### User Attributes
+#### Operation: Get All Users
 
-- **Name**: The full name of the user.
-- **Email**: The email address of the user.
-- **Password**: A secure password for user authentication.
-- **Role**: The role of the user within the system, either as a teacher or a student.
-- **Subjects**: The subjects that the user is associated with, either teaching or learning.
-- **Progress**: The progress made by the user in various subjects and topics.
+- **Description:** Retrieve all users.
+- **URL:** `/user`
+- **Method:** GET
 
-### Subject Attributes
+---
 
-- **Title**: The name of the subject.
-- **Topics**: A list of topics that are covered within the subject.
-- **Teacher**: The teacher assigned to the subject.
-- **Students**: The students who are enrolled in the subject.
+#### Operation: Promote a User to Teacher
 
-### Topic Attributes
+- **Description:** Promote a user to a teacher. (Admin authorization required)
+- **URL:** `/user/promote/:id`
+- **Method:** PATCH
 
-- **Title**: The name of the topic.
-- **Description**: A brief description of what the topic covers.
-- **Video**: Any video resources available for the topic.
-- **Progress**: The progress made by users in the topic.
+---
 
-### Progress Attributes
+#### Operation: Create a Subject
 
-- **Student**: The student associated with the progress record.
-- **Topic**: The topic associated with the progress record.
-- **Status**: The current status of the student's progress in the topic.
+- **Description:** Create a new subject. (Teacher authorization required)
+- **URL:** `/subject/`
+- **Method:** POST
+- **Example:**
+  ```json
+  {
+    "name": "Algorithm & Data Structure"
+  }
+  ```
 
-## 📌 Usage
+---
 
-This README provides a basic outline of the entities and attributes used in the school architecture system. For more detailed information, please refer to the project's documentation or source code.
+#### Operation: Get All Subjects
 
-## 🛠️ Installation
+- **Description:** Retrieve all subjects.
+- **URL:** `/subject/`
+- **Method:** GET
 
-```bash
-$ yarn install
+---
 
-# development
-$ yarn run start
+#### Operation: Get a Subject
 
-# watch mode
-$ yarn run start:dev
+- **Description:** Retrieve a subject by ID.
+- **URL:** `/subject/:id`
+- **Method:** GET
 
-# production mode
-$ yarn run start:prod
-```
+---
 
-## 🧪 Test
+#### Operation: Assign Teacher to a Subject
 
-```bash
-# unit tests
-$ yarn run test
+- **Description:** Assign a teacher to a subject. (Admin authorization required)
+- **URL:** `/subject/assign`
+- **Method:** PATCH
+- **Example:**
+  ```json
+  {
+    "id": "acb7a95d-3e1c-4228-9c6a-a1f56ce2f2af",
+    "teacherId": "ab8f0cf5-61a3-4385-a322-a76364a66af9"
+  }
+  ```
 
-# e2e tests
-$ yarn run test:e2e
+---
 
-# test coverage
-$ yarn run test:cov
-```
+#### Operation: Enroll in a Subject
 
-## 📜 License
+- **Description:** Enroll a student in a subject. (Student authorization required)
+- **URL:** `/subject/enroll`
+- **Method:** POST
+- **Example:**
+  ```json
+  {
+    "id": "27e19635-7f21-44e1-926d-b5c377eeeda5",
+    "teacherId": "ab8f0cf5-61a3-4385-a322-a76364a66af9"
+  }
+  ```
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+---
 
-## 📞 Contact
+#### Operation: Create a Topic
 
-For questions or feedback, please contact James Olanipekun @jamesfullstackdeveloper@gmail.com.
+- **Description:** Create a new topic. (Teacher authorization required)
+- **URL:** `/topic/`
+- **Method:** POST
+- **Example:**
+  ```json
+  {
+    "title": "Fundamentals of Artificial Intelligence",
+    "subjectId": "27e19635-7f21-44e1-926d-b5c377eeeda5",
+    "description": "Artificial Intelligence is taking over the Global Space In Technological Advancements"
+  }
+  ```
 
-```
+---
 
-```
+#### Operation: Update a Topic
 
-## 📄 API Documentation
+- **Description:** Update an existing topic. (Teacher authorization required)
+- **URL:** `/topic/`
+- **Method:** PUT
+- **Example:**
+  ```json
+  {
+    "id": "6cdefc14-470a-45c3-9b3b-57b1aca68a93"
+  }
+  ```
 
-For comprehensive details on the API, please refer to the [API Documentation](./README_APIs.md). This document provides essential information on available endpoints, request/response formats, and usage examples to help you integrate with the API effectively.
+---
+
+#### Operation: Get a Topic
+
+- **Description:** Retrieve a topic by ID. (Registered users authorized)
+- **URL:** `/topic/:id`
+- **Method:** GET
+
+---
+
+#### Operation: Get Topics by Subject
+
+- **Description:** Retrieve topics by subject ID. (Registered users authorized)
+- **URL:** `/topic/subject/:id`
+- **Method:** GET
+
+---
+
+#### Operation: Upload a Video for a Topic
+
+- **Description:** Upload a video for a topic. (Teacher authorization required)
+- **URL:** `/topic/video`
+- **Method:** PATCH
+- **Example:**
+  ```json
+  {
+    "id": "6cdefc14-470a-45c3-9b3b-57b1aca68a93",
+    "video": "video sample for the project"
+  }
+  ```
+
+---
+
+#### Operation: Create Progress Status
+
+- **Description:** Create a new progress status. (API key required)
+- **URL:** `/progress/`
+- **Method:** POST
+- **Example:**
+  ```json
+  {
+    "studentId": "e575b108-ef45-4009-bdd7-fab40bde2508",
+    "topicId": "6cdefc14-470a-45c3-9b3b-57b1aca68a93",
+    "apiKey": "progress-secret-key"
+  }
+  ```
+
+---
+
+#### Operation: Update Progress Status
+
+- **Description:** Update an existing progress status. (API key required)
+- **URL:** `/progress/`
+- **Method:** PATCH
+- **Example:**
+  ```json
+  {
+    "studentId": "e575b108-ef45-4009-bdd7-fab40bde2508",
+    "topicId": "6cdefc14-470a-45c3-9b3b-57b1aca68a93",
+    "apiKey": "progress-secret-key",
+    "progress": "5"
+  }
+  ```
+
+---
+
+#### Operation: Get My Progress in Subject
+
+- **Description:** Retrieve the progress of a student by their ID. (Student authorization required)
+- **URL:** `/progress/mine/:id`
+- **Method:** GET
+
+---
+
+#### Operation: Get Progress of All Students
+
+- **Description:** Retrieve progress for a specific subject by ID. (Teacher/Admin authorization required)
+- **URL:** `/progress/subject/:id`
+- **Method:** GET
+
+---
+
+#### Operation: View Rankings of Students in a Subject
+
+- **Description:** Rank students who took a subject based on their completion rate. (Teacher/Admin authorization required)
+- **URL:** `/progress/rank/:id`
+- **Method:** GET
+
+---
