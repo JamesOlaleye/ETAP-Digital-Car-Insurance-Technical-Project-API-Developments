@@ -1,5 +1,7 @@
 # 📚 ETAP School-API
 
+### Click on this link to view the URL for published documentation: [📄 View Full Documentation](https://documenter.getpostman.com/view/24605564/2sA3rxqDTE)
+
 ### Documentation
 
 ---
