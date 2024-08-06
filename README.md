@@ -17,6 +17,7 @@
     "firstName": "nameExample",
     "lastName": "nameExample",
     "email": "example@mail.com",
+    "password": "123456",
     "adminKey": "administrator"
   }
   ```
@@ -132,8 +133,7 @@
 - **Example:**
   ```json
   {
-    "id": "27e19635-7f21-44e1-926d-b5c377eeeda5",
-    "teacherId": "ab8f0cf5-61a3-4385-a322-a76364a66af9"
+    "id": "27e19635-7f21-44e1-926d-b5c377eeeda5"
   }
   ```
 
@@ -163,7 +163,9 @@
 - **Example:**
   ```json
   {
-    "id": "6cdefc14-470a-45c3-9b3b-57b1aca68a93"
+    "id": "6cdefc14-470a-45c3-9b3b-57b1aca68a93",
+    "title": "Block Chain Technology",
+    "description": "Leading Market in Tech Eco-System"
   }
   ```
 
