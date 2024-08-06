@@ -79,7 +79,7 @@
 
 #### Operation: Create a Subject
 
-- **Description:** Create a new subject. (Teacher authorization required)
+- **Description:** Create a new subject. (Admin authorization required)
 - **URL:** `/subject/`
 - **Method:** POST
 - **Example:**
@@ -155,7 +155,7 @@
 
 #### Operation: Update a Topic
 
-- **Description:** Update an existing topic. (Teacher authorization required)
+- **Description:** Update an existing topic. (Teacher authorization required). Other fields in request body are optional parameter if you care to update.
 - **URL:** `/topic/`
 - **Method:** PUT
 - **Example:**
@@ -185,14 +185,14 @@
 
 #### Operation: Upload a Video for a Topic
 
-- **Description:** Upload a video for a topic. (Teacher authorization required)
+- **Description:** Upload a video for a topic. (Teacher Assigned authorization required)
 - **URL:** `/topic/video`
 - **Method:** PATCH
 - **Example:**
   ```json
   {
     "id": "6cdefc14-470a-45c3-9b3b-57b1aca68a93",
-    "video": "video sample for the project"
+    "video": "upload video as file here not text"
   }
   ```
 

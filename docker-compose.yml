@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  etap_api:
+    build:
+      context: .
+      dockerfile: dockerfile
+    image: jamesolanipekun/etap_api:latest
+    ports:
+      - '3225:3225'
